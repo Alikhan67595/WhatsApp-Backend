@@ -22,6 +22,8 @@ const authSchema = new Schema({
         type: String,
         required: true
     }
+},{
+    timestamps : true
 })
 
 const UserModel = mongoose.model("users" , authSchema)

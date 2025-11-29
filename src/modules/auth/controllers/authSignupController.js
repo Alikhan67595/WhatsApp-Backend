@@ -4,9 +4,11 @@ export const signupController = async(req,res)=>{
 try {
     const {user, authToken} = await signupService(req.body)
     console.log(user)
-    res.status(201).json({
+
+    res.cookie("WhatsappUser", authToken)
+
+   return res.status(201).json({
         status : 201,
-        data : user ,
         token : authToken,
         message : "User is successfully created"
     })

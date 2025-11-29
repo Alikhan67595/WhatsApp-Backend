@@ -1,12 +1,20 @@
 import UserModel from "../models/index.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import loginSchema from "../schema/loginSchema.js"
 
 export const loginService = async(body)=>{
 try {
 
-    let {emailOrUserName , password} = body
-    
+    let {error,value} = loginSchema.validate(body)
+
+    if(error){
+        console.log(error)
+        throw new Error(error.details[0].message)
+    }
+
+    let {emailOrUserName , password} = value
+    console.log("body",body)
     let loginUser;
 
     if(emailOrUserName.includes('@')){
@@ -20,19 +28,23 @@ try {
     }
 
     if(!loginUser){
-        throw new Error({
-            message : "User is not exist",
-            status : 404
-        })
+        
+          let error = new Error("User is not exist" )
+           error.status = 404
+           console.log(error.status)
+           throw error
+    
     }
 
     const matchPass = await bcrypt.compare(password, loginUser.password)
 
     if(!matchPass){
-        throw new Error({
-            message : "incorrect Password",
-            status : 401
-        })
+        
+     let error  = new Error("incorrect Password")
+        error.status = 401
+        console.log(error.status)
+      throw error
+        
     }
 
     loginUser = loginUser.toObject()
@@ -53,7 +65,7 @@ try {
        return {loginUser , authToken}
 
 } catch (error) {
-    throw new Error(error.message)
+    throw error
 
 }
 

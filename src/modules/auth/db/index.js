@@ -2,7 +2,7 @@ import UserModel from "../models/index.js"
 
 export const createUser = async(body)=>{
 
-const user = await new UserModel(body).save()
+const user = await UserModel.create(body)
 
 let userObject = user.toObject()
 

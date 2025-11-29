@@ -26,10 +26,9 @@ try {
     })
 
     if(findEmail){
-        throw new Error({
-            message :"Email is already exist",
-            status : 409
-        })
+        let error = new Error("Email is already exist")
+            error.status = 409
+        throw error
     }
 
 
@@ -38,10 +37,9 @@ try {
     })
 
     if(findUserName){
-        throw new Error({
-            maessage :"Username is already exist",
-            status : 409
-        })
+        let error = new Error("Username is already exist")
+            error.status = 409
+        throw error
     }
     
 

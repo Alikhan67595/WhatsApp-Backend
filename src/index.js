@@ -8,9 +8,6 @@ let routes = Router()
 routes.use('/auth', authRoutes)
 
 
-routes.get('/',(req,res)=>{
-    res.send('this is routes')
-})
 
 
 
