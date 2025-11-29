@@ -1,24 +1,28 @@
 import { loginService } from "../services/loginService.js"
 
 
-export const loginController = async(req,res)=>{
+export const loginController = async (req, res) => {
     try {
-       const {loginUser,authToken} = await loginService(req.body)
+        const { loginUser, authToken } = await loginService(req.body)
 
 
-        res.cookie("WhatsappUser", authToken)
+        res.cookie("WhatsappUser", authToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+        })
 
-      return res.status(200).json({
-        status : 200,
-        token : authToken,
-        message : "User is successfully login"
-       })
-       
+        return res.status(200).json({
+            status: 200,
+            token: authToken,
+            message: "User is successfully login"
+        })
+
     } catch (error) {
         console.log(error)
         res.status(error.status || 500).json({
-            status : error.status || 500,
-            message : error.message || "Internal server error"
+            status: error.status || 500,
+            message: error.message || "Internal server error"
         })
     }
 }
