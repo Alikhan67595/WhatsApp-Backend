@@ -7,7 +7,7 @@ export const signupController = async (req, res) => {
 
         res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: "none",
             path: "/",
         })

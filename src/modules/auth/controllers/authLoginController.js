@@ -8,7 +8,7 @@ export const loginController = async (req, res) => {
 
         res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: "none",
             path: "/",
         })

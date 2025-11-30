@@ -5,7 +5,7 @@ export const logoutController = async(req, res) => {
     console.log("Logout controller called", req.cookies)
         res.clearCookie("WhatsappUser",{
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: "none",   
             path: "/",
         })
