@@ -8,7 +8,12 @@ export const tokenVerification = async (req, res, next) => {
        let token = req.cookies.WhatsappUser
         // console.log(token)
         if(!token){
-            return res.status(401).json({ message: "No token, authorization denied" })
+            return res.status(200).json({
+            status: 200,
+            user: null,
+            message: "User does't exist"
+        })
+
         }
 
         let decoded = jwt.verify(token , process.env.JWT_KEY)
