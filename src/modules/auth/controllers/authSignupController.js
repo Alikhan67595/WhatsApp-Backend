@@ -15,6 +15,7 @@ export const signupController = async (req, res) => {
 
         return res.status(201).json({
             status: 201,
+            user: user,
             token: authToken,
             message: "User is successfully created"
         })
