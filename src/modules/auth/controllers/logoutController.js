@@ -1,5 +1,4 @@
 
-
 export const logoutController = async(req, res) => {
     try {
     console.log("Logout controller called", req.cookies)
@@ -10,11 +9,6 @@ export const logoutController = async(req, res) => {
             path: "/",
         })
 
-      return  res.status(200).json({
-        status: 200,
-        user: null,
-        message: "Logout successful",
-        })  
 
     } catch (error) {
         console.log(error)
