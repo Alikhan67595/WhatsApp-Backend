@@ -2,7 +2,7 @@
 export const logoutController = async(req, res) => {
     try {
     console.log("Logout controller called", req.cookies)
-        res.cookie("WhatsappUser"," ",{
+        res.cookie("WhatsappUser","",{
             httpOnly: true,
             secure: true,
             sameSite: "none",   

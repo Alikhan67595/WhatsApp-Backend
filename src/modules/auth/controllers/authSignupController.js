@@ -10,6 +10,7 @@ export const signupController = async (req, res) => {
             secure: true,
             sameSite: "none",
             path: "/",
+            domain: "whats-app-backend-roan.vercel.app",
         })
 
         return res.status(201).json({

@@ -11,6 +11,7 @@ export const loginController = async (req, res) => {
             secure: true,
             sameSite: "none",
             path: "/",
+            domain: "whats-app-backend-roan.vercel.app",
         })
 
         return res.status(200).json({
