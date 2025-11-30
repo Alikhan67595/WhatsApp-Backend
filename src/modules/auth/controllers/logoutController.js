@@ -7,7 +7,7 @@ export const logoutController = async(req, res) => {
             secure: true,
             sameSite: "none",   
             path: "/",
-            // domain: "whats-app-backend-roan.vercel.app",
+            domain: "whats-app-backend-roan.vercel.app",
             expires: new Date(0),
             maxAge: 0,
         })
