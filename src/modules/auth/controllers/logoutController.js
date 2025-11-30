@@ -7,8 +7,14 @@ export const logoutController = async(req, res) => {
             secure: true,
             sameSite: "none",   
             path: "/",
+            domain: "whats-app-backend-roan.vercel.app"
         })
 
+      return  res.status(200).json({
+        status: 200,
+        user: null,
+        message: "Logout successful",
+        })  
 
     } catch (error) {
         console.log(error)
