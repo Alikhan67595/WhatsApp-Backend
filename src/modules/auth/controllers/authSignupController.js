@@ -9,6 +9,7 @@ export const signupController = async (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite: "none",
+            path: "/",
         })
 
         return res.status(201).json({

@@ -7,6 +7,7 @@ export const logoutController = async(req, res) => {
             httpOnly: true,
             secure: true,
             sameSite: "none",   
+            path: "/",
         })
 
       return  res.status(200).json({
