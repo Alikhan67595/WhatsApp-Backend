@@ -6,7 +6,7 @@ import "dotenv/config"
 export const tokenVerification = async (req, res, next) => {
     try {
        let token = req.cookies.WhatsappUser
-        // console.log(token)
+        console.log(token)
         if(!token){
             return res.status(200).json({
             status: 200,

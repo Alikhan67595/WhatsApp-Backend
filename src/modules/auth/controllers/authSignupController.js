@@ -7,7 +7,7 @@ export const signupController = async (req, res) => {
 
         res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: true,
+            secure: true, 
             sameSite: "none",
             path: "/",
             domain: "whats-app-backend-roan.vercel.app",

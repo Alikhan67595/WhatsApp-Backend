@@ -1,11 +1,12 @@
 import { fetchUser } from "../services/fetchUser.js"
-import cookieParser from "cookie-parser"
+
 
 
 
 export const fetchUserController = async (req, res) => {
     try {
         let token = req.cookies.WhatsappUser
+        console.log(token)
         let { user } = await fetchUser(token)
 console.log(user)
         res.status(200).json({

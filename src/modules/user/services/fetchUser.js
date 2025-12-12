@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken"
 import "dotenv/config"
-import UserModel from "../models/index.js"
+import UserModel from "../../auth/models/index.js"
 
 
 export const fetchUser = async (token) => {
