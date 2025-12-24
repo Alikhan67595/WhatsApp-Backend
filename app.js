@@ -11,7 +11,7 @@ import { Server } from 'socket.io'
 
 
 const app = express()
-const port = 3000
+const port = 8000
 const server = http.createServer(app)
 
 
@@ -67,7 +67,7 @@ mongoose.connection.on("error",(error)=>{
 
 
 
-server.listen(port, () => {
+server.listen(port,"0.0.0.0", () => {
   console.log(chalk.green.bold(`Example app listening on port ${port}`))
 })
 
