@@ -53,9 +53,8 @@ try {
 
 
       const authToken =  jwt.sign({
-           userName : loginUser.userName,
-           fullName : loginUser.fullName,
            email : loginUser.email,
+           id :  loginUser._id
        },process.env.JWT_KEY)
 
 

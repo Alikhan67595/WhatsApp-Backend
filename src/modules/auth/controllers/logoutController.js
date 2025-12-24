@@ -4,10 +4,10 @@ export const logoutController = async(req, res) => {
     console.log("Logout controller called", req.cookies)
         res.cookie("WhatsappUser","",{
             httpOnly: true,
-            secure: true,
-            sameSite: "none",   
+            secure: false, // true
+            sameSite: "lax", // none
             path: "/",
-            domain: "whats-app-backend-roan.vercel.app",
+            // domain: "whats-app-backend-roan.vercel.app",
             expires: new Date(0),
             maxAge: 0,
         })

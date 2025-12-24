@@ -21,6 +21,7 @@
     "joi": "^18.0.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^9.0.0",
+    "socket.io": "^4.8.3",
     "yup": "^1.7.1"
   }
 }

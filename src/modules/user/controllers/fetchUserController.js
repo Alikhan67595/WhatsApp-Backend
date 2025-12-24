@@ -6,9 +6,9 @@ import { fetchUser } from "../services/fetchUser.js"
 export const fetchUserController = async (req, res) => {
     try {
         let token = req.cookies.WhatsappUser
-        console.log(token)
+        // console.log(token)
         let { user } = await fetchUser(token)
-console.log(user)
+// console.log(user)
         res.status(200).json({
             status: 200,
             user: user,

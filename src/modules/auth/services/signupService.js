@@ -51,14 +51,13 @@ try {
 
     value.password = hashPassword
    
+    const user = await createUser(value)
 
     const authToken =  jwt.sign({
-        userName : userName,
-        fullName : fullName,
         email : email,
+        id :  user._id
     },process.env.JWT_KEY)
 
-    const user = await createUser(value)
 
     return {user , authToken}
 

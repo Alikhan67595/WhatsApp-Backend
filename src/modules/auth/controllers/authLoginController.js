@@ -8,10 +8,10 @@ export const loginController = async (req, res) => {
 
         res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: true, 
-            sameSite: "none", 
+            secure: false, // true
+            sameSite: "lax", // none 
             path: "/",
-            domain: "whats-app-backend-roan.vercel.app",
+            // domain: "whats-app-backend-roan.vercel.app",
         })
 
         return res.status(200).json({
