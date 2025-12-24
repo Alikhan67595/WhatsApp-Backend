@@ -2,9 +2,9 @@ import { sendMessagesService } from '../services/sendMessagesService.js'
 
 export const sendMessagesController = async (req, res) => {
     try {
-        let {receiverId} = req.params
+        
         let token = req.cookies.WhatsappUser
-        let result = await sendMessagesService(req.body, token, receiverId)
+        let result = await sendMessagesService(req.body, token)
 
 
         res.status(200).json({
