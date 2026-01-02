@@ -10,7 +10,7 @@ export const signupController = async (req, res) => {
             secure: true, 
             sameSite: "none", 
             path: "/",
-            domain: "https://welcome-charmine-alikhan67595-a5ec3999.koyeb.app",
+            domain: "https://whatsapp-backend-nw0s.onrender.com",
         })
 
         return res.status(201).json({

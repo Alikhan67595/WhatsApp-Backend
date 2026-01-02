@@ -4,6 +4,7 @@ import { updateUserController } from './controllers/updateUserController.js'
 import { findUserController } from './controllers/findContactController.js'
 import { addContactController } from './controllers/addContactController.js'
 import { getContactController } from './controllers/getContactController.js'
+import { fetchUserContactListController } from './controllers/fetchUserContactListController.js'
 
 
 
@@ -15,6 +16,7 @@ userRoutes.put('/update/:id', updateUserController)
 userRoutes.post('/findcontact', findUserController)
 userRoutes.post('/addcontact/:id', addContactController)
 userRoutes.get('/addcontact/:id', getContactController)
+userRoutes.get('/contactlist', fetchUserContactListController)
 
 
 
