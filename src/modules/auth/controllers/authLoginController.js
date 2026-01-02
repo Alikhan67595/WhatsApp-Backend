@@ -11,7 +11,7 @@ export const loginController = async (req, res) => {
             secure: true, 
             sameSite: "none",  
             path: "/",
-             domain: "https://whatsapp-backend-nw0s.onrender.com",
+             domain: "whatsapp-backend-nw0s.onrender.com",
         })
 
         return res.status(200).json({
