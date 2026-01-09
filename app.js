@@ -38,7 +38,7 @@ io.on("connection",(socket)=>{
 
     socket.on("join-room",(userId)=>{
       socket.join( userId)
-      console.log(`User with ID ${userId} joined room successfully`)
+      console.log(chalk.yellow(`User ${userId} is now in their private room`))
     })
 
 

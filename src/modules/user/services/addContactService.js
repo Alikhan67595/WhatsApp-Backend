@@ -11,10 +11,18 @@ try {
             throw error
         }
 
-        let user = await UserModel.findOne({userId : userId})
+        let user = await UserModel.findOne({
+        _id: id,
+      "contacts.userId": userId
+    })
+
 
         if(user){
             let error = new Error("Contact already exists")
+            error.status = 400
+            throw error
+        }else if(id === userId){
+            let error = new Error("You cannot add yourself as a contact")
             error.status = 400
             throw error
         }

@@ -7,10 +7,10 @@ export const signupController = async (req, res) => {
 
         res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: true, 
-            sameSite: "none", 
+            secure: false, 
+            sameSite: "lax", 
             path: "/",
-            domain: "whatsapp-backend-nw0s.onrender.com",
+            // domain: "whatsapp-backend-nw0s.onrender.com",
         })
 
         return res.status(201).json({

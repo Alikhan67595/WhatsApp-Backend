@@ -4,7 +4,7 @@ export const sendMessagesController = async (req, res) => {
     try {
         
         let token = req.cookies.WhatsappUser
-        let result = await sendMessagesService(req.body, token)
+   let result = await sendMessagesService(req.body, token)
 
 
         res.status(200).json({

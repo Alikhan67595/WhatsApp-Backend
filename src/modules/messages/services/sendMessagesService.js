@@ -2,7 +2,9 @@ import MessageModel from "../models/index.js"
 import jwt from "jsonwebtoken"
 import "dotenv/config"
 import { io } from "../../../../app.js"
-import { isObjectIdOrHexString } from "mongoose"
+
+
+
 
 export const sendMessagesService = async (body , token) =>{
     try {
@@ -20,6 +22,8 @@ export const sendMessagesService = async (body , token) =>{
         let newMessage = await MessageModel.create({message , receiverId , senderId})
 
             console.log("Sending message to room:", receiverId)
+
+
             io.to(receiverId).emit("receive-message",newMessage)
           
     

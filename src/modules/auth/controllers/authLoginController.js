@@ -6,12 +6,14 @@ export const loginController = async (req, res) => {
         const { loginUser, authToken } = await loginService(req.body)
 
 
-        res.cookie("WhatsappUser", authToken, {
+        
+
+     res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: true, 
-            sameSite: "none",  
+            secure: false, 
+            sameSite: "lax",  
             path: "/",
-             domain: "whatsapp-backend-nw0s.onrender.com",
+            //  domain: "whatsapp-backend-nw0s.onrender.com",
         })
 
         return res.status(200).json({
@@ -20,6 +22,9 @@ export const loginController = async (req, res) => {
             token: authToken,
             message: "User is successfully login"
         })
+
+
+       
 
     } catch (error) {
         console.log(error)
