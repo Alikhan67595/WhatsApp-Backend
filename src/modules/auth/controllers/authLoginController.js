@@ -10,10 +10,10 @@ export const loginController = async (req, res) => {
 
      res.cookie("WhatsappUser", authToken, {
             httpOnly: true,
-            secure: false, 
-            sameSite: "lax",  
+            secure: true, 
+            sameSite: "none",  
             path: "/",
-            //  domain: "whatsapp-backend-nw0s.onrender.com",
+             domain: "whatsapp-backend-nw0s.onrender.com",
         })
 
         return res.status(200).json({
